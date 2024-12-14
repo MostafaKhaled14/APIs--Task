@@ -6,12 +6,15 @@
 
 body{
     font-family: "Roboto", sans-serif;
+    text-transform: capitalize;
 }
 
 :root{
     --color-white:white;
     --main-co:#1e202b;
     --sec-co:#009ad8;
+    --ther-co:#323544;
+    --for-co:#262936;
 }
 
 .fw-lighter{
@@ -27,8 +30,19 @@ body{
     background-color:var(--sec-co);
 }
 
+.bg-ther{
+    background-color: var(--ther-co);
+}
+.bg-for{
+    background-color: var(--for-co);
+}
+
 .te-main{
     color:var(--sec-co);
+}
+
+.te-white{
+    color: var(--color-white);
 }
 
 .navbar-brand:focus, .navbar-brand:hover, .navbar-brand{
@@ -45,4 +59,32 @@ body{
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .nav-link:focus, .nav-link:hover{
     color: var(--sec-co);
     border-color: var(--sec-co);
+}
+
+main .container-fluid{
+    background-image: url(../images/banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+}
+
+main .input-group #sub{
+    top: 0.4rem;
+    right: 0.4rem;
+    bottom: 0.4rem;
+    z-index: 10000;
+}
+main .input-group #sherch:focus{
+    background-color: var(--main-co);
+    color: var(--color-white);
+    box-shadow: none;
+    font-size: 0.8rem;
+}
+main .input-group #sherch::placeholder{
+    color: var(--color-white);
+    opacity: 0.8;
+}
+
+main .item #cont{
+    font-size: 5rem;
 }
