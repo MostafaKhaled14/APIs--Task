@@ -19,7 +19,6 @@ body{
 
 .fw-lighter{
     font-size:0.7rem;
-    /* text-transform: ; */
 }
 
 .bg-main{
@@ -45,15 +44,36 @@ body{
     color: var(--color-white);
 }
 
+/* start navbar */
+@media (max-width: 992px) {
+    .navbar-nav .nav-item:not(:last-child){
+        color: var(--color-white);
+        border-bottom: 1px solid var(--color-white);
+    }
+    .navbar-nav .nav-item{
+        padding: 10px;
+    }
+    .navbar-nav{
+        background-color: var(--ther-co);
+        border-radius: 1rem;
+    }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .nav-link:focus, .nav-link:hover{
+        border-color:transparent!important;
+    }
+}
+
 .navbar-brand:focus, .navbar-brand:hover, .navbar-brand{
     color: var(--color-white);
 }
 
 .navbar-nav .nav-link{
+    padding: 100px;
     color: var(--color-white);
     border: 2px solid transparent;
     border-radius: 30px;
     transition: 0.4s;
+    width: fit-content;
+    margin: auto;
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .nav-link:focus, .nav-link:hover{
@@ -61,26 +81,39 @@ body{
     border-color: var(--sec-co);
 }
 
+.navbar-toggler{
+    background-color: var(--color-white);
+    transition: 0.4s;
+}
+.navbar-toggler:hover, .navbar-toggler:focus{
+    background-color: var(--sec-co);
+    box-shadow: none;
+}
+/* end navbar */
+/* start main */
 main .container-fluid{
     background-image: url(../images/banner.png);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    height: 350px;
 }
 
-main .input-group #sub{
+.input-group #sub{
     top: 0.4rem;
     right: 0.4rem;
     bottom: 0.4rem;
     z-index: 10000;
 }
-main .input-group #sherch:focus{
+
+.input-group #sherch{
+    font-size: 0.6rem;
+}
+
+.input-group #sherch:focus{
     background-color: var(--main-co);
     color: var(--color-white);
     box-shadow: none;
-    font-size: 0.8rem;
 }
-main .input-group #sherch::placeholder{
+.input-group #sherch::placeholder{
     color: var(--color-white);
     opacity: 0.8;
 }
@@ -88,3 +121,13 @@ main .input-group #sherch::placeholder{
 main .item #cont{
     font-size: 5rem;
 }
+/* end main */
+/* start footer */
+footer a{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+footer .input-group #sherch{
+    font-size: 0.7rem;
+}
+/* end footer */
