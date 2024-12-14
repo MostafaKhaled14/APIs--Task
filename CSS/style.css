@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+:root{
+    --color-white:white;
+    --main-co:#1e202b;
+    --sec-co:#009ad8;
+}
+
+.fw-lighter{
+    font-size:0.7rem;
+    text-transform: ;
+}
+
+.bg-main{
+    background-color:var(--main-co);
+}
+
+.bg-sec{
+    background-color:var(--sec-co);
+}
+
+.te-main{
+    color:var(--sec-co);
+}
+
+.navbar-brand:focus, .navbar-brand:hover, .navbar-brand{
+    color: var(--color-white);
+}
+
+.navbar-nav .nav-link{
+    color: var(--color-white);
+    border: 2px solid transparent;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .nav-link:focus, .nav-link:hover{
+    color: var(--sec-co);
+    border-color: var(--sec-co);
+}
