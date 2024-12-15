@@ -18,7 +18,7 @@
                 <a class="navbar-brand fs-6 d-flex align-items-center p-sm-4 my-3" href="#">
                     <img class="" src="images/logo.png" alt="">
                     <div class="ms-2">
-                        <h2 class="fs-6 m-0 ">Weather</h2>
+                        <h2 class="fs-6 m-0 ">Company name</h2>
                         <small class="fw-lighter">tagline goes here</small>
                     </div>
                 </a>
@@ -37,7 +37,7 @@
                     <div class="container">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-capitalize text-center justify-content-end">
                             <li class="nav-item fw-light">
-                                <a class="nav-link px-4 py-1 active" aria-current="page" href="#">home</a>
+                                <a class="nav-link px-4 py-1" aria-current="page" href="http://127.0.0.1:5500/index.html">home</a>
                             </li>
                             <li class="nav-item fw-light">
                                 <a class="nav-link px-4 py-1" href="#">news</a>
@@ -49,7 +49,7 @@
                                 <a class="nav-link px-4 py-1" href="#">photos</a>
                             </li>
                             <li class="nav-item fw-light">
-                                <a class="nav-link px-4 py-1" href="http://127.0.0.1:5500/contact.html">contact</a>
+                                <a class="nav-link px-4 py-1 active" href="#">contact</a>
                             </li>
                         </ul>
                     </div>
@@ -59,51 +59,50 @@
         <!-- end navbar -->
         <!-- start main -->
         <main>
-            <div class="container-fluid class-img">
+            <div class="container-fluid">
                 <div class="container">
-                    <form class="d-flex input-group position-relative" role="search">
-                        <div class="input-group m-5 position-relative">
-                            <input type="search" class="form-control rounded-5 py-3 bg-ther border-0 te-white" id="sherch" placeholder="Find your location..." aria-label="Search" aria-describedby="button-addon2">
-                            <input class="position-absolute bg-sec te-white px-2 px-md-5 rounded-5 border-0 " type="button" value="Find" id="sub">
-                        </div>
-                    </form>
-                    <div class="row rounded-3 te-white text-center pb-5">
-                        <div class="item shadow mb-2 col-lg-4 bg-ther text-start p-0 rounded-start-3">
-                            <div class="d-flex justify-content-between align-items-center p-2 px-3 bg-for opacity-75 rounded-top-3 rounded-end-0">
-                                <p class="m-0">Saturday</p>
-                                <p class="m-0">14December</p>
+                    <div class="bg-ther te-white rounded-5 px-4 py-3 mb-5 d-flex align-items-center">
+                        <a class="to-home me-2 fw-light te-white text-decoration-none" href="http://127.0.0.1:5500/index.html">Home</a>
+                        <i class="me-2 fa-solid fa-arrow-right-long"></i>
+                        <p class="me-2 te-main my-0">Contact</p>
+                    </div>
+                    <div class="row te-white justify-content-between mb-5">
+                        <div class="col-md-5 mb-4">
+                            <div class="px-3 px-md-5  d-flex flex-column py-5 bg-ther rounded-3">
+                                <p class="pt-5"><i class="te-main fa-solid fa-location-dot"></i> Company Name INC.2803 Avenue Street, Los Angeles</p>
+                                <a class=" text-decoration-none te-white" href=""><i class="te-main fa-solid fa-phone"></i> +1 800 314 235</a>
+                                <a class="mb-4 text-decoration-none te-white" href=""><i class="te-main fa-solid fa-envelope"></i> contact@companyname.com</a>
                             </div>
-                            <div class="p-4">
-                                <p class="py-2">Cairo</p>
-                                <div class="d-sm-flex d-lg-block">
-                                    <h1 id="cont" class="fw-bold">21.1<sup>o</sup>C</h1>
-                                    <img class="h-50" src="images/1166.png" alt="img">
+                        </div>
+                        <div class="col-md-6">
+                            <h1>Contact us</h1>
+                            <p class="fw-lighter fs-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur inventore ducimus, facilis, numquam id soluta omnis eius recusandae nesciunt vero repellat harum cum. Nisi facilis odit hic, ipsum sed!</p>
+                            <form class="row pt-5 justify-content-center">
+                                <div class="col-12 col-sm-10 col-md-6">
+                                    <input class="my-h w-100 my-2 rounded-5 bg-transparent py-2 ps-2" type="text" name="name"
+                                        placeholder="Your name..." id="name">
                                 </div>
-                                <p class="te-main">Partly cloudy</p>
-                                <div class="mb-2">
-                                    <span class="px-1 fw-light"><img src="images/icon-umberella.png" alt="img"> 20%</span>
-                                    <span class="px-1 fw-light"><img src="images/icon-wind.png" alt="img"> 18km/h</span>
-                                    <span class="px-1 fw-light"><img src="images/icon-compass.png" alt="img"> east</span>
+                                <div class="col-12 col-sm-10 col-md-6">
+                                    <input class="my-h w-100 my-2 rounded-5 bg-transparent py-2 ps-2" type="email" name="email"
+                                        placeholder="Email Address..." id="email">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="item shadow mb-2 p-0 d-flex flex-column justify-content-start col-lg-4 bg-for">
-                            <div class="p-2 bg-ther opacity-75">
-                                <p class="m-0">Sunday</p>
-                            </div>
-                            <img class="mx-auto mt-5" src="images/113.png" alt="img">
-                            <h3>21.2<sup>o</sup>C</h3>
-                            <small>12.1<sup>o</sup></small>
-                            <p class="te-main mt-3">Sunny</p>
-                        </div>
-                        <div class="item shadow mb-2 p-0 d-flex flex-column justify-content-start col-lg-4 bg-ther rounded-end-3">
-                            <div class="p-2 bg-for opacity-75 rounded-end-3 rounded-bottom-0">
-                                <p class="m-0">Monday</p>
-                            </div>
-                            <img class="mx-auto mt-5" src="images/113.png" alt="img">
-                            <h3>22.2<sup>o</sup>C</h3>
-                            <small>11.7<sup>o</sup></small>
-                            <p class="te-main mt-3">Sunny</p>
+                                <div class="col-12 col-sm-10 col-md-6">
+                                    <input class="my-h w-100 my-2 rounded-5 bg-transparent py-2 ps-2" type="text" name="company"
+                                        placeholder="Company name..." id="company">
+                                </div>
+                                <div class="col-12 col-sm-10 col-md-6">
+                                    <input class="my-h w-100 my-2 rounded-5 bg-transparent py-2 ps-2" type="text" name="website"
+                                        placeholder="Website..." id="website">
+                                </div>
+                                <div class="col-12 col-sm-10 col-md-12">
+                                    <label for="message"></label>
+                                    <textarea class="my-h my-h-area py-2 rounded-5 bg-transparent w-100 ps-2 px-lg-3"
+                                        name="message" placeholder="Message..." id="message"></textarea>
+                                </div>
+                                <div class="col-4 ms-auto me-3 mt-2">
+                                    <button class="my-b-hov px-4 te-white bg-sec border-0 rounded-4 py-2">Send</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -91,7 +91,7 @@ body{
 }
 /* end navbar */
 /* start main */
-main .container-fluid{
+main .class-img{
     background-image: url(../images/banner.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -126,8 +126,39 @@ main .item #cont{
 footer a{
     width: 2.5rem;
     height: 2.5rem;
+    transition: 0.2s;
+}
+footer a:hover{
+    color: var(--color-white);
+    background-color: var(--sec-co);
+    /* width: 2.5rem; */
+    /* height: 2.5rem; */
 }
 footer .input-group #sherch{
     font-size: 0.7rem;
 }
 /* end footer */
+
+/* start html contant page */
+/* start main */
+main .to-home:hover{
+    transition: 0.2s;
+    color: var(--sec-co);
+}
+main form .my-h-area{
+    resize: none;
+    height: 9rem;
+}
+main form .my-h{
+    border: 2px solid rgb(88, 83, 83);
+    transition: 0.2s;
+    color: var(--color-white);
+}
+main form .my-h:focus{
+    color: var(--color-white);
+}
+main form .my-h:hover{
+    border-color: var(--sec-co);
+}
+/* end main */
+/* end html contant page */
