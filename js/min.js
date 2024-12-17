@@ -37,7 +37,7 @@ let directionMap = {
 }
 
 let data;
-if (navigator.geolocation || data === undefined) {
+if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async function (position) {
         loadingScreen.classList.remove('d-none');
         let lat = position.coords.latitude;
@@ -47,20 +47,23 @@ if (navigator.geolocation || data === undefined) {
         getAllDdata()
         loadingScreen.classList.add('d-none');
     },
-        async function () {
+        function() {
             loadingScreen.classList.remove('d-none');
-            alert(`" يسطا خليني اعرف موقعك علشان اعرضلك بيانات الطقس بتاعتك دقيقة "
-" او دور بنفسك "`);
-            let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4ec7a71d7e464e30972122501241512&q=cairo&days=3`);
-            data = await response.json();
-            getAllDdata()
-            
+            alert(`" Allow your location to be displayed so I can view or search for your weather data yourself.Allow your location to be displayed so I can view your weather data accurately or look it up yourself. "`);
             loadingScreen.classList.add('d-none');
         }
     );
-} else {
-    alert("Geolocation is not supported by this browser.");
+} else {alert("Geolocation is not supported by this browser.");}
+
+async function defaultData() {
+    loadingScreen.classList.remove('d-none');
+    let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4ec7a71d7e464e30972122501241512&q=cairo&days=3`);
+    data = await response.json();
+    getAllDdata()
+    loadingScreen.classList.add('d-none');
 }
+
+window.addEventListener('load', defaultData);
 
 async function searchOnMe(){
     for (let i = 0; i < values.length; i++) {
@@ -74,7 +77,6 @@ async function searchOnMe(){
         }
     }
 }
-
 search.addEventListener('keyup', searchOnMe)
 
 function getAllDdata() {
