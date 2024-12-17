@@ -63,7 +63,9 @@
                 <div class="container">
                     <form class="d-flex input-group position-relative" role="search">
                         <div class="input-group m-5 position-relative">
-                            <input value="" type="search" class="form-control rounded-5 py-3 bg-ther border-0 te-white" id="search" placeholder="Find your location..." aria-label="Search" aria-describedby="button-addon2">
+                            <input  list="datalist" value="" type="search" class="form-control rounded-5 py-3 bg-ther border-0 te-white" id="search" placeholder="Find your location..." aria-label="Search" aria-describedby="button-addon2">
+                            <datalist id="datalist" class="d-none">
+                            </datalist>
                             <input type="button" class="position-absolute bg-sec te-white px-3 px-md-5 rounded-5 border-0 " value="Find" id="sub">
                         </div>
                     </form>
@@ -140,6 +142,4 @@
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/min.js"></script>
     </body>
-
-
 </html>

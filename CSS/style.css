@@ -119,12 +119,8 @@ main .class-img {
     z-index: 100;
 }
 
-.input-group #search {
-    font-size: 1rem;
-}
-
 .input-group .form-control:focus {
-    background-color: var(--ther-co);
+    background-color: var(--ther-co)!important;
     color: var(--color-white);
     box-shadow: none;
 }
@@ -134,9 +130,8 @@ main .class-img {
     opacity: 0.8;
 }
 
-
 .input-group .form-controlme:focus {
-    background-color: var(--main-co);
+    background-color: var(--main-co)!important;
 }
 
 main .item #cont {
