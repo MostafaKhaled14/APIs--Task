@@ -8,6 +8,7 @@ let firstDay = document.querySelector('.row #firstDay');
 let secondDay = document.querySelector('.row #secondDay');
 let therdDay = document.querySelector('.row #therdDay');
 let month = document.querySelector('.row #month');
+let theDay = document.querySelector('.row #theDay');
 let country = document.querySelector('.row #country');
 let maxTemp = document.querySelectorAll('.row #maxTemp');
 let minTemp = document.querySelectorAll('.row #minTemp');
@@ -16,7 +17,11 @@ let condition = document.querySelectorAll('.row #condition');
 let windKph = document.querySelector('.row #windKph');
 let rainChance = document.querySelector('.row #rainChance');
 let windDir = document.querySelector('.row #windDir');
-let search = document.getElementById('search');
+let search = document.querySelector('main #search');
+let loadingScreen = document.querySelector('#loadingScreen');
+
+// console.log(message);
+
 
 let directionMap = {
     "N": "North",
@@ -36,15 +41,6 @@ let directionMap = {
     "NNW": "West"
 }
 // 
-function removListOfLinks() {
-    list.classList.remove('show');
-}
-
-document.addEventListener('click', removListOfLinks)
-
-for (let k = 0; k < listOfLinks.length; k++) {
-    listOfLinks[k].addEventListener('click', removListOfLinks);
-}
 
 let changeActive = (j) => {
     for (let i = 0; i < links.length; i++) {
@@ -55,7 +51,14 @@ let changeActive = (j) => {
     links[j].classList.add('active');
 }
 
+function removListOfLinks() {
+    list.classList.remove('show');
+}
+
+document.addEventListener('click', removListOfLinks);
+
 for (let j = 0; j < links.length; j++) {
+    listOfLinks[j].addEventListener('click', removListOfLinks);
     links[j].addEventListener('click', function () {
         changeActive(j)
     })
@@ -63,26 +66,30 @@ for (let j = 0; j < links.length; j++) {
 // 
 
 let data;
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(async function (position) {
+        loadingScreen.classList.remove('d-none');
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+        let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4ec7a71d7e464e30972122501241512&q=${lat},${lon}&days=3`);
+        data = await response.json();
+        getAllDdata()
+        loadingScreen.classList.add('d-none');
+    },
+        async function () {
+            loadingScreen.classList.remove('d-none');
+            alert(`" يسطا خليني اعرف موقعك علشان اعرضلك بيانات الطقس بتاعتك دقيقة "
+" او دور بنفسك "`);
+            let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4ec7a71d7e464e30972122501241512&q=cairo&days=3`);
+            data = await response.json();
+            getAllDdata()
+            loadingScreen.classList.add('d-none');
+        }
+    );
+} else {
+    alert("Geolocation is not supported by this browser.");
+}
 
-
-    navigator.geolocation.getCurrentPosition( async (position) => {
-            let lat = position.coords.latitude;
-            let lon = position.coords.longitude;
-            if(lat !== undefined && lon !== undefined){
-                let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4ec7a71d7e464e30972122501241512&q=${lat},${lon}&days=3`);
-                data = await response.json();
-                getAllDdata()
-            }else{
-                async function viewData() {
-                    let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=4ec7a71d7e464e30972122501241512&q=cairo&days=3`);
-                    data = await response.json();
-                    getAllDdata()
-                }
-                viewData()
-                // 'you need to remove this alert'
-                alert('Error determining your location. Please search for your location through the search bar');
-            }
-        })
 
 function getAllDdata() {
     let newSrc;
@@ -119,10 +126,11 @@ function getMonthFromDate() {
     let date = new Date(data.forecast.forecastday[0].date);
     let monthName = date.toLocaleDateString("en-US", { month: "long" });
     month.innerHTML = monthName;
+    theDay.innerHTML = data.forecast.forecastday[0].date.split('-').slice(-1)[0];
 }
 
 
-// 
+//
 
 
 
@@ -135,7 +143,7 @@ function getMonthFromDate() {
 
 
 
-// 
+//
 
 
 // القاهرة (Cairo)
