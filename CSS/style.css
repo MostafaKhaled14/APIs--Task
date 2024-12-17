@@ -104,16 +104,16 @@ main .class-img{
     z-index: 10000;
 }
 
-.input-group #sherch{
-    font-size: 0.6rem;
+.input-group #search{
+    font-size: 1rem;
 }
 
-.input-group #sherch:focus{
+.input-group #search:focus{
     background-color: var(--main-co);
     color: var(--color-white);
     box-shadow: none;
 }
-.input-group #sherch::placeholder{
+.input-group #search::placeholder{
     color: var(--color-white);
     opacity: 0.8;
 }
@@ -134,7 +134,7 @@ footer a:hover{
     /* width: 2.5rem; */
     /* height: 2.5rem; */
 }
-footer .input-group #sherch{
+footer .input-group #search{
     font-size: 0.7rem;
 }
 /* end footer */
