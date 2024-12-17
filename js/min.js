@@ -63,7 +63,7 @@ async function defaultData() {
     loadingScreen.classList.add('d-none');
 }
 
-window.addEventListener('load', defaultData);
+defaultData();
 
 async function searchOnMe(){
     for (let i = 0; i < values.length; i++) {
