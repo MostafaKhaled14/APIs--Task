@@ -49,7 +49,7 @@ if (navigator.geolocation) {
     },
         function() {
             loadingScreen.classList.remove('d-none');
-            alert(`" Allow your location to be displayed so I can view or search for your weather data yourself.Allow your location to be displayed so I can view your weather data accurately or look it up yourself. "`);
+            alert(`" Allow your location to be displayed so I can view your weather data accurately or look it up yourself. "`);
             loadingScreen.classList.add('d-none');
         }
     );
